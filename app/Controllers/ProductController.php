@@ -7,6 +7,8 @@ use Symfony\Component\Routing\RouteCollection;
 use App\Helper\Redirection;
 use App\SessionHandler;
 
+use function App\Helper\dd;
+
 class ProductController
 {
     /**
@@ -17,6 +19,7 @@ class ProductController
 	{
         $product = new Product();
         $product->read($id);
+        dd($product);
 
         if (null === $product->getId()) {
             Redirection::error404();

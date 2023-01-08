@@ -14,5 +14,6 @@ define('DB_USER', 'root');
 define('DB_PASS', '');
 define('DB_NAME', 'simple_php_mvc');
 
-//DEBUG
-define('DEBUG', false);
+//ENVIRONMENT
+define('ENV', 'dev');
+define('DEBUG', true);

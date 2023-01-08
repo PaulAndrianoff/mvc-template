@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Helper;
+
 /**
  * Dump given variable and die
  * 
@@ -7,6 +9,9 @@
  */
 function dd ():void
 {
+    if ('dev' !== ENV) {
+        return;
+    }
     echo '<pre class="xdebug-var-dump">';
     array_map(function ($x) {
         var_dump($x);
@@ -16,12 +21,15 @@ function dd ():void
 }
 
 /**
- * Print given variable
+ * Dump given variable
  * 
  * @return void
  */
 function d ():void
 {
+    if ('dev' !== ENV) {
+        return;
+    }
     echo '<pre class="xdebug-var-dump">';
     array_map(function ($x) {
         var_dump($x);
