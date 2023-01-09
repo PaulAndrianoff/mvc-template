@@ -8,8 +8,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="favicon.png">
+
     <title>Simple PHP MVC</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="<?= getStyle('main') ?>">
 </head>
 
 <body>

@@ -1,0 +1,148 @@
+body{
+	background: var(--white);
+	font-family: Helvetica, Arial;
+	font-size:14px;
+}
+
+.clearBoth{
+	clear: both;
+}
+
+.flex {
+	display: flex;
+}
+
+.container {
+	width: var(--spacing-mfl);
+	margin: auto;
+}
+
+/* Text size */
+h1 {
+	font-size: var(--h1-title-size);
+	color: red;
+}
+
+h2 {
+	font-size: var(--h2-title-size);
+}
+
+h3 {
+	font-size: var(--h3-title-size);
+}
+
+h4 {
+	font-size: var(--h4-title-size);
+}
+
+h5 {
+	font-size: var(--h5-title-size);
+}
+
+h6 {
+	font-size: var(--h6-title-size);
+}
+
+p {
+	font-size: var(--normal-text-size);
+}
+
+/* Header */
+header {
+	display: flex;
+	background: var(--link-nav-background);
+	color: var(--link-nav-color);
+	vertical-align: middle;
+	justify-content: space-between;
+}
+
+header .site-title {
+	width: max-content;
+	font-size: var(--h4-title-size);
+	text-transform: uppercase;
+}
+
+header + .container {
+	padding: var(--spacing-l);
+	min-height: calc(100vh - 95px)
+}
+
+/* Footer */
+footer {
+	background: var(--color-main-1);
+	color: var(--white);
+}
+
+footer > .container {
+	padding: var(--spacing-s);
+}
+
+/* Title */
+.title {
+	margin-bottom: var(--spacing-l);
+}
+
+/* List item */
+.list {
+	padding: var(--spacing-m);
+
+}
+
+.list > div {
+	margin-bottom: var(--spacing-m);
+}
+
+.list h3 {
+	margin-bottom: var(--spacing-s);
+}
+
+.list p.subtitle {
+	margin-bottom: var(--spacing-s);
+}
+
+.list a {
+	display: inline-block;
+	min-width: 120px;
+	padding: var(--spacing-m);
+	text-align: center;
+}
+
+/* Default navigation */
+.nav {
+	display: flex;
+}
+
+.nav a, header .site-title, .list a {
+	background: var(--link-nav-background);
+	text-decoration: var(--link-nav-text-decoration);
+	background: var(--link-nav-background);
+	color: var(--link-nav-color);
+	border: var(--link-nav-border);
+	transition: var(--link-nav-transition);
+}
+
+.nav a, header .site-title {
+	display: var(--link-nav-display);
+	padding: var(--link-nav-padding);
+}
+
+.nav a:hover, header .site-title:hover, .list a:hover {
+	background: var(--link-nav-color);
+	color: var(--link-nav-background);
+}
+
+/* Article */
+.container--page {
+	width: var(--spacing-mfl);
+	color: var(--color-main-1);
+	margin: auto;
+}
+
+.container--page .title {
+	text-align: center;
+	font-weight: bold;
+}
+
+.container--page .subtitle {
+	margin-bottom: var(--spacing-m);
+}

@@ -9,7 +9,7 @@
             <li><?php echo $product->getSku(); ?></li>
             <li><?php echo $product->getImage(); ?></li>
         </ul>
-        <a href="<?php echo $routes->get('homepage')->getPath(); ?>">Back to homepage</a>
+        <!-- <a href="<?php echo $routes->get('homepage')->getPath(); ?>">Back to homepage</a> -->
     <section>
 
 <?php require_once APP_ROOT . '/views/parts/footer.php'; ?>

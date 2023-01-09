@@ -1,0 +1,74 @@
+html {
+    font-size:16px; /* Base font size */
+}
+
+:root {
+    /******************
+           FONTS
+    ******************/
+    /* FONT SIZE */
+    --h1-title-size: 3rem;
+    --h2-title-size: 2rem;
+    --h3-title-size: 1.75rem;
+    --h4-title-size: 0.9rem;
+    --h5-title-size: 0.75rem;
+    --h6-title-size: 0.6rem;
+
+    --normal-text-size: 1rem;
+
+    /******************
+           COLORS
+    ******************/
+    /* PRIMARY */
+    --white: #fefefe;
+    --black: #0f0f0f;
+    --red: #dd0000;
+    --green: #00dd00;
+
+    /* MAIN */
+    --color-main-1: #444;
+    --color-main-2: #444;
+    --color-main-3: #444;
+
+    /* USAGE */
+    --color-valid: var(--green);
+    --color-error:var(--red);
+
+
+    /******************
+     SPACING && BORDER
+    ******************/
+    --spacing-xs: 3px;
+    --spacing-s: 10px;
+    --spacing-m: 20px;
+    --spacing-l: 50px;
+
+    --spacing-fl: 100%;
+    --spacing-mfl: 80%;
+
+    --border-m: 5px;
+    --border-l: 10px;
+
+    --border-radius-s: 3px;
+    --border-radius-m: 15px;
+    --border-radius-l: 100%;
+
+
+    /******************
+            LINK
+    ******************/
+    /* NAVIGATION */
+    --link-nav-display: block;
+	--link-nav-padding: var(--spacing-m) calc(var(--spacing-m) * 2);
+	--link-nav-text-decoration: none;
+	--link-nav-background: var(--color-main-1);
+	--link-nav-color: var(--white);
+	--link-nav-border: 1px solid var(--link-nav-background);
+    --link-nav-transition: background var(--transition-time);
+
+
+    /******************
+         ANIMATION
+    ******************/
+    --transition-time: 0.3s;
+}

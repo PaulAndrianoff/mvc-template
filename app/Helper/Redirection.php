@@ -2,7 +2,7 @@
 
 namespace App\Helper;
 
-use App\SessionHandler;
+use App\Core\SessionHandler;
 
 /**
  * Here you find all functions for debugging

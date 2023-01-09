@@ -14,8 +14,8 @@ require_once '../app/Helper/mainHelper.php';
 require_once '../app/EntityUtilities/Entity.php';
 
 // Session Handler
-require_once '../app/SessionHandler.php';
+require_once '../app/Core/SessionHandler.php';
 
 // Routes
 require_once '../routes/web.php';
-require_once '../app/Router.php';
+require_once '../app/Core/Router.php';

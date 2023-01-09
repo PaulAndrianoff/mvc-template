@@ -2,22 +2,27 @@
 
 namespace App\Controllers;
 
-use Symfony\Component\Routing\RouteCollection;
-use App\SessionHandler;
+use App\Core\SessionHandler;
+use App\Core\RouterCollection;
+
+use function App\Helper\dd;
 
 /**
- * @param RouteCollection $routes
+ * HomeController
  */
 class HomeController
 {
     /**
-	 * @param RouteCollection $routes
+	 * @param RouterCollection $routes
 	 */
-	public function indexAction(RouteCollection $routes):void
+	public function indexAction(RouterCollection $routes):void
 	{
 		SessionHandler::resetRoute();
-		$routeToProduct = str_replace('{id}', 1, $routes->get('product')->getPath());
-		
+		// $routeToProduct = str_replace(':id', 1, $routes->get('Product#showAction')->getPath());
+		// $routeToProduct = str_replace(':name', 'test', $routeToProduct);
+
+		$routeToProduct = $routes->get('Product#showAction')->setPath([1]);
+
         require_once APP_ROOT . '/views/pages/home.php';
 	}
 }
