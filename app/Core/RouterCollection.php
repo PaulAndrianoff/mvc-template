@@ -5,7 +5,7 @@ namespace App\Core;
 class RouterCollection {
     private $collection = [];
 
-    public function __construct($collection){
+    public function __construct($collection) {
         $this->collection = $collection;
     }
 

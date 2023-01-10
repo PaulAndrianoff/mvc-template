@@ -10,40 +10,78 @@ use function App\Helper\d;
 
 class Router {
 
+    /**
+     * @var string
+     */
     private $url;
+
+    /**
+     * @var array
+     */
     private $routes = [];
+
+    /**
+     * @var array
+     */
     private $namedRoutes = [];
 
-    public function __construct($url){
+    public function __construct($url) {
         $this->url = $url;
     }
 
-    public function get($path, $callable, $name = null){
+    /**
+     * @param string $path
+     * @param string $callable
+     * @param string $name
+     * 
+     * @return Route
+     */
+    public function get($path, $callable, $name = null) {
         return $this->add($path, $callable, $name, 'GET');
     }
 
-    public function post($path, $callable, $name = null){
+    /**
+     * @param string $path
+     * @param string $callable
+     * @param string $name
+     * 
+     * @return Route
+     */
+    public function post($path, $callable, $name = null) {
         return $this->add($path, $callable, $name, 'POST');
     }
 
-    private function add($path, $callable, $name, $method){
+    /**
+     * @param string $path
+     * @param string $callable
+     * @param string $name
+     * @param string $method
+     * 
+     * @return Route
+     */
+    private function add($path, $callable, $name, $method) {
         $route = new Route($path, $callable);
         $this->routes[$method][] = $route;
-        if(is_string($callable) && $name === null){
+        if(is_string($callable) && $name === null) {
             $name = $callable;
         }
-        if($name){
+        if($name) {
             $this->namedRoutes[$name] = $route;
         }
         return $route;
     }
 
-    public function run($routeCollection){
-        if(!isset($this->routes[$_SERVER['REQUEST_METHOD']])){
+    /**
+     * @param Router
+     * 
+     * @return mixed
+     */
+    public function run($routeCollection) {
+        if(!isset($this->routes[$_SERVER['REQUEST_METHOD']])) {
             d('REQUEST_METHOD does not exist');
         }
-        foreach($this->routes[$_SERVER['REQUEST_METHOD']] as $route){
-            if($route->match($this->url)){
+        foreach($this->routes[$_SERVER['REQUEST_METHOD']] as $route) {
+            if($route->match($this->url)) {
                 return $route->call(new RouterCollection ($routeCollection));
             }
         }
@@ -51,19 +89,30 @@ class Router {
         Redirection::error404();
     }
 
-    public function url($name, $params = []){
-        if(!isset($this->namedRoutes[$name])){
-            // throw new RouterException('No route matches this name');
+    /**
+     * @param string $name
+     * @param array $params
+     * 
+     * @return string
+     */
+    public function url($name, $params = []) {
+        if(!isset($this->namedRoutes[$name])) {
             d('No route matches this name');
         }
         
         return $this->namedRoutes[$name]->getUrl($params);
     }
 
+    /**
+     * @return array
+     */
     public function getRoutes () {
         return $this->routes;
     }
 
+    /**
+     * @return array
+     */
     public function getNamedRoutes () {
         return $this->namedRoutes;
     }

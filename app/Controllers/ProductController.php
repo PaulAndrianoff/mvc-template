@@ -15,7 +15,7 @@ class ProductController
      * @param string $name
      * 
      */
-	public function showAction(int $id, string $name, RouterCollection $routes):void
+	public function showAction(int $id, RouterCollection $routes):void
 	{
         $product = new Product();
         $product->read($id);

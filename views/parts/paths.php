@@ -1,10 +1,8 @@
-<ul>
+<ul class="arriane-path">
     <?php foreach ($_SESSION['previous_url'] as $key => $value): ?>
-
         <?php 
-            $parseValue = str_replace('/' . BASE_URL, '', $value);
+            $parseValue = 0 === $key ? 'home' : str_replace('/' . BASE_URL, '', $value);
         ?>
-
-        <li><a href="<?= $value ?>"><?= $parseValue ?></a></li>
+        <li class="arriane-path--item"><a href="<?= $value ?>"><?= $parseValue ?></a></li>
     <?php endforeach ?>
 </ul>

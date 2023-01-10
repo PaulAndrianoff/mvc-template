@@ -21,7 +21,6 @@ Class SessionHandler {
      * Function use to add current route to 'previous_url'
      * Do it if it's a valid and if it doesn't already exist
      * 
-     * @param string $sessionVariable
      * @param string $value
      */
     public static function setRoute ($value) {
@@ -29,7 +28,7 @@ Class SessionHandler {
             self::set('previous_url', []);
         }
 
-        $regexRoute = '/\/' . BASE_URL . '\/[a-z0-9\/\-]*$/i';
+        $regexRoute = '/\/' . BASE_URL . '\/[a-z0-9\/\-:]*$/i';
         $regexRoute404 = '/\/' . BASE_URL . '\/404$/i';
         if (
             preg_match($regexRoute, $value) &&

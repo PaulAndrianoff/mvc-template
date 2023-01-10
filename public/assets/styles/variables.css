@@ -38,7 +38,7 @@ html {
     /******************
      SPACING && BORDER
     ******************/
-    --spacing-xs: 3px;
+    --spacing-xs: 4px;
     --spacing-s: 10px;
     --spacing-m: 20px;
     --spacing-l: 50px;
@@ -64,7 +64,7 @@ html {
 	--link-nav-background: var(--color-main-1);
 	--link-nav-color: var(--white);
 	--link-nav-border: 1px solid var(--link-nav-background);
-    --link-nav-transition: background var(--transition-time);
+    --link-nav-transition: all var(--transition-time);
 
 
     /******************

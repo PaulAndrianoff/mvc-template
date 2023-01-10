@@ -10,8 +10,9 @@
     <link rel="shortcut icon" href="favicon.png">
 
     <title>Simple PHP MVC</title>
-    
-    <link rel="stylesheet" href="<?= getStyle('main') ?>">
+
+    <?php require_once 'mainStyle.php' ?>
+
 </head>
 
 <body>
